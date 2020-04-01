@@ -21,7 +21,7 @@ namespace = 'airflow'
 with dag:
     k1 = KubernetesPodOperator(
         namespace=namespace,
-        image="ubuntu:16.04",
+        image="python:3.7-slim-buster",
         cmds=["bash", "-cx"],
         arguments=["echo", "10"],
         labels={"foo": "1"},
@@ -36,7 +36,7 @@ with dag:
 with dag:
     k2 = KubernetesPodOperator(
         namespace=namespace,
-        image="ubuntu:16.04",
+        image="python:3.7-slim-buster",
         cmds=["bash", "-cx"],
         arguments=["echo", "20"],
         labels={"foo": "2"},
@@ -51,7 +51,7 @@ with dag:
 with dag:
     k3 = KubernetesPodOperator(
         namespace=namespace,
-        image="ubuntu:16.04",
+        image="python:3.7-slim-buster",
         cmds=["bash", "-cx"],
         arguments=["echo", "30"],
         labels={"foo": "3"},
